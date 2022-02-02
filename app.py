@@ -6,8 +6,8 @@ app = Flask(__name__)
 
 app.config["MAIL_SERVER"] = "smtp.gmail.com"
 app.config["MAIL_PORT"] = 587
-app.config["MAIL_USERNAME"] = "tester.adityaa@gmail.com"
-app.config["MAIL_PASSWORD"] = "tester@123"
+app.config["MAIL_USERNAME"] = ""			# please enter the e-mail id in oreder to send the password ( enter another email id, do not enter the e-mail id where you will receive the passowrd) 
+app.config["MAIL_PASSWORD"] = ""			# enter the passowrd for the e-mail id entered above
 app.config["MAIL_USE_TLS"] = True
 app.config["MAIL_USE_SSL"] = False
 
@@ -31,7 +31,7 @@ def gen():
 	for i in range(le):
 		pw = pw + text[randrange(len(text))]
 
-	msg = Message("PG App has something for you" , sender = "tester.adityaa@gmail.com", recipients = [em])
+	msg = Message("PG App has something for you" , sender = "", recipients = [em])				# use the same e-mail used in "MAIL_USERNAME" in sender
 	msg.body = "Your Passowrd is " + str(pw)
 	mail.send(msg)
 	return render_template("home.html", msg = pw)
