@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title> Password Generator App by Aditya </title>
+	<style> 
+		* { font-size: 30px; font-family: Rajdhani; }
+	</style>
+</head>
+<body>
+<center>
+<h1> Password Generator </h1>
+<form action ="/gen" method = "POST">
+	<input type = "email" name = "em" placeholder = "Enter Email Address" required>
+	<br><br>
+	Select password length <select name = "length">
+		<option value = "6"> 6 </option>
+		<option value = "7"> 7 </option>
+		<option value = "8"> 8 </option>
+		<option value = "9"> 9 </option>
+	</select>
+	<br><br>
+	<input type = "checkbox" name = "uc"> Uppercase </input>
+	<br><br>
+	<input type = "checkbox" name = "di"> Digits </input>
+	<br><br>
+	<input type = "submit" value = "Generate Password">
+	
+</form>
+{{ msg }}
+</center>
+</body>
+</html>
